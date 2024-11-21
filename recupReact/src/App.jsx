@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef} from 'react'
 import axios from 'axios';
-import Request from './componentes/request';
+import Request from './componentes/Request';
 import './App.css'
 
 function App() {

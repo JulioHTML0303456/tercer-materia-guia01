@@ -1,15 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import "./Request.css"
+
 
 function Request({ Ref }) {
   const [FKStore, setFKStore] = useState([]);
   const [json, setjson] = useState([]);
-
-  useEffect(() => {
-    axios.get(
-        `https://fakestoreapi.com/products/category/electronics?limit=${1}`)
-      .then((res) => setFKStore(res.data));
-  },[]);
 
   const getFKS = ()=>{
     setFKStore([])
@@ -49,7 +45,7 @@ function Request({ Ref }) {
       <button onClick={getFKS}>pedir</button>
       <p>-------------------</p>
       <ul>
-        {json.map((product) => (<li key={product.id}>{product.title}</li>))}
+        {json.map((product) => (<li key={product.id}>{product.title}</li>, <img key={product.id} src={product.image}></img>))}
       </ul>
       <p>-------------------</p>
       <ul>
